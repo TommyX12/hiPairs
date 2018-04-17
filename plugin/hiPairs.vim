@@ -49,9 +49,10 @@ endif
 let g:hiPairs_exists_matchaddpos = exists("*matchaddpos")
 
 augroup hiPairs
+    autocmd!
     autocmd! VimEnter,ColorScheme * call s:DisableMatchParen() | call s:InitColor()
     " autocmd! CursorMoved,CursorMovedI,WinEnter * call s:HiPairs(0)
-    autocmd! CursorHold,CursorHoldI,WinEnter * call s:HiPairs(1)
+    autocmd! CursorHold,CursorHoldI,WinEnter * call s:HiPairs(0)
 augroup END
 
 " Skip the rest if it was already done.
